@@ -6,6 +6,33 @@
 
 import '@stencil/router';
 
+import { AppSite as AppSite } from './components/app-site/app-site';
+
+interface HTMLAppSiteElement extends AppSite, HTMLElement {
+}
+declare var HTMLAppSiteElement: {
+  prototype: HTMLAppSiteElement;
+  new (): HTMLAppSiteElement;
+};
+declare global {
+  interface HTMLElementTagNameMap {
+      "app-site": HTMLAppSiteElement;
+  }
+  interface ElementTagNameMap {
+      "app-site": HTMLAppSiteElement;
+  }
+  namespace JSX {
+      interface IntrinsicElements {
+          "app-site": JSXElements.AppSiteAttributes;
+      }
+  }
+  namespace JSXElements {
+      export interface AppSiteAttributes extends HTMLAttributes {
+        
+      }
+  }
+}
+
 import { MyName as MyName } from './components/my-name/my-name';
 
 interface HTMLMyNameElement extends MyName, HTMLElement {
@@ -29,8 +56,8 @@ declare global {
   namespace JSXElements {
       export interface MyNameAttributes extends HTMLAttributes {
         
-          first?: any,
-          last?: any
+          first?: string,
+          last?: string
       }
   }
 }

@@ -23,6 +23,8 @@ and run:
 ```bash
 npm install
 npm start
+# Start Pusher Server
+node server.js
 ```
 
 To view the build, start an HTTP server inside of the `/www` directory.
